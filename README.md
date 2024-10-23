@@ -16,12 +16,6 @@ express + fs + mysql
 
 data.sql中存放对数据库的初始化操作
 
-将客户端的请求模块化
-
-![image-20241023193454389](README.assets/image-20241023193454389.png)
-
-引入jwt生成token，用户记住用户的登陆状态
-
 
 
 ## 项目运行

@@ -12,7 +12,7 @@ USE provate_test_bbs;
 --  VARCHAR(100)表示该字段最大字符的个数是100
 -- PRIMARY KEY关键字用于定义列为主键。 您可以使用多列来定义主键，列间以逗号分隔。
 -- FOREIGN KEY(`parent_id`) REFERENCES plateM(`pid`)   对两个表的数据进行关联，references后的数据要在表中是key 主键
-CREATE TABLE IF NOT EXISTS `user`(`id` VARCHAR(40) NOT NULL,`name` VARCHAR(100) NOT NULL,`nickName` VARCHAR(100),`password` VARCHAR(40) NOT NULL,`icon`  VARCHAR(100),`create_time` VARCHAR(100),`lastLoginTime` VARCHAR(100),`gender` VARCHAR(20),`introduction` VARCHAR(1000),`isLogin` TINYINT(1) NOT NULL DEFAULT 1,`identity` VARCHAR(20) NOT NULL DEFAULT 'user',PRIMARY KEY ( `id` ))ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `user`(`id` VARCHAR(40) NOT NULL,`name` VARCHAR(100) NOT NULL,`nickName` VARCHAR(100),`password` VARCHAR(40) NOT NULL,`icon`  VARCHAR(100) default 'default.svg',`create_time` VARCHAR(100),`lastLoginTime` VARCHAR(100),`gender` VARCHAR(20),`introduction` VARCHAR(1000),`isLogin` TINYINT(1) NOT NULL DEFAULT 1,`identity` VARCHAR(20) NOT NULL DEFAULT 'user',PRIMARY KEY ( `id` ))ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 给用户表添加数据
 INSERT INTO `user` (`id`,`name`,`nickName`,`password`,`icon`,`create_time`,`lastLoginTime`,`identity`) VALUES('admin_as1z','administrator','administrator','123456','default.svg','2024-03-19','2024-03-19','root');

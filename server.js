@@ -36,7 +36,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    if(req.method == 'POST' && !['/login_admin','/login','/add_new_user','/get_user_info'].includes(req.path)){
+    if(req.method == 'POST' && !['/login_admin','/login','/add_new_user','/get_user_info','/check_name'].includes(req.path)){
         const token = req.headers['authorization']
         // console.log('----app.use', token)
         if(!token){
@@ -103,7 +103,12 @@ app.post('/add_new_user',async(req,res)=>{
 // 检测账户是否存在
 app.post('/check_name',async(req,res)=>{
     let result = await check_user_name(req.body.name)
-    res.send(result)
+    if(result.length != 0){
+        res.send(true)
+    }else{
+        res.send(false)
+    }
+    // res.send(result)
 })
 
 

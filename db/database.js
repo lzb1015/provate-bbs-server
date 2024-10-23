@@ -281,7 +281,7 @@ async function login_db(obj){
 // 添加用户
 async function add_user_db(obj){
     let res = await new Promise((resolve,reject)=>{
-        connection.query('INSERT INTO user(`id`,`name`,`nickName`,`password`,`icon`,`create_time`) VALUES(?,?,?,?,?,?)',[obj.id,obj.name,obj.nickName,obj.password,obj.icon,obj['create_time']],(err,res)=>{
+        connection.query('INSERT INTO user(`id`,`name`,`nickName`,`password`,`create_time`) VALUES(?,?,?,?,?)',[obj.id,obj.name,obj.nickName,obj.password,obj.icon,obj['create_time']],(err,res)=>{
             if(err) reject(err)
             resolve(res)
         })
