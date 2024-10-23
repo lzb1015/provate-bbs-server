@@ -1,0 +1,3 @@
+{
+    "ssecretKey":"provate-bbs-adminstrator"
+}
